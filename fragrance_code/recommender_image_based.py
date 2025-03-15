@@ -31,13 +31,13 @@ SITUATION_TO_ACCORD = {
 }
 
 def recommend_fragrances(
-    detected_colors=None, situation=None, gender=None, brand=None, favorite_notes=None, exclude_notes=None, dataset_path="data/fragrance_ML_model.csv", num_recommendations=5):
+    tagged_colors=None, situation=None, gender=None, brand=None, favorite_notes=None, exclude_notes=None, dataset_path="data/fragrance_ML_model.csv", num_recommendations=5):
     """
     Recommends fragrances based on detected colors, situation, gender, brand, and preferred fragrance notes.
-    If no image is uploaded (detected_colors is None or empty), the function uses only text-based filtering.
+    If no image is uploaded (tagged_colors is None or empty), the function uses only text-based filtering.
 
     Parameters:
-    - detected_colors (list): Colors detected from the uploaded image.
+    - tagged_colors (list): Colors detected from the uploaded image.
     - situation (str): Context for using the fragrance (e.g., "casual", "office").
     - gender (str): Preferred gender category for the fragrance ("male", "female", "unisex").
     - brand (str): Preferred brand name.
@@ -68,9 +68,9 @@ def recommend_fragrances(
     keywords = set()
 
     # Extract fragrance accords based on detected colors
-    if detected_colors:
-        print(f"Detected Colors: {detected_colors}")
-        keywords.update(sum([COLOR_TO_KEYWORDS.get(color, []) for color in detected_colors], []))
+    if tagged_colors:
+        print(f"Colors to match with fragrance characteristics: {tagged_colors}")
+        keywords.update(sum([COLOR_TO_KEYWORDS.get(color, []) for color in tagged_colors], []))
 
     # Add situation accords
     if situation:
