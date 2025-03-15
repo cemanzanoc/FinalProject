@@ -63,7 +63,26 @@ El objetivo principal es construir un motor de recomendaciones que combine de ma
    Pruebas e iteraciones para validar la precisión y relevancia de las recomendaciones.
 
 ## Estructura del Proyecto 📁
-. ├── data/ │ ├── fragrance_ML_model.csv │ ├── fragrance_database.csv │ └── colors.csv ├── fragrance_code/ │ ├── data_loader.py # Carga y preprocesa datos de fragancias │ ├── image_processing.py # Procesa imágenes: remueve fondo/rostros y extrae colores dominantes │ ├── processing_text.py # Limpia datos textuales y expande consultas │ ├── model_text.py # Entrena y guarda el modelo TF-IDF + KNN para texto │ ├── recommender_image_based.py # Recomendador basado en análisis de imágenes │ └── recommender_text_based.py # Recomendador basado en datos textuales ├── notebooks/ │ └── fragrance_EDA.ipynb # Notebook de Análisis Exploratorio de Datos ├── models/ │ ├── tfidf_knn_model.pkl # Modelo TF-IDF + KNN guardado │ ├── vectorizer.pkl # Vectorizador TF-IDF guardado │ └── (otros archivos pickle para normalización/PCA) └── README.md # Documentación del proyecto (este archivo)
+.
+├── data/
+│   ├── fragrance_ML_model.csv
+│   ├── fragrance_database.csv
+│   └── colors.csv
+├── fragrance_code/
+│   ├── data_loader.py              # Carga y preprocesa datos de fragancias
+│   ├── image_processing.py         # Procesa imágenes: remueve fondo/rostros y extrae colores dominantes
+│   ├── processing_text.py          # Limpia datos textuales y expande consultas
+│   ├── model_text.py               # Entrena y guarda el modelo TF-IDF + KNN para texto
+│   ├── recommender_image_based.py  # Recomendador basado en análisis de imágenes
+│   └── recommender_text_based.py   # Recomendador basado en datos textuales
+├── notebooks/
+│   └── fragrance_EDA.ipynb         # Notebook de Análisis Exploratorio de Datos
+├── models/
+│   ├── tfidf_knn_model.pkl         # Modelo TF-IDF + KNN guardado
+│   ├── vectorizer.pkl              # Vectorizador TF-IDF guardado
+│   └── (otros archivos pickle para normalización/PCA)
+└── README.md                     # Documentación del proyecto (este archivo)
+
 
 ## Presentación del Proyecto 🎤
 La presentación del proyecto incluye:
